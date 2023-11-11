@@ -9,24 +9,24 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(getenv('API_ID'))
-    API_HASH = str(getenv('API_HASH'))
-    BOT_TOKEN = str(getenv('BOT_TOKEN'))
+    API_ID = int(getenv('API_ID' '19160495'))
+    API_HASH = str(getenv('API_HASH' '0e98cc48b081a829a86c593cdfdd720d'))
+    BOT_TOKEN = str(getenv('BOT_TOKEN' '6875581535:AAFIQnFPm2KnHVwsO1_-ebb4iPInTZfqE0c'))
     name = str(getenv('name', 'filetolinkbot'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
-    BIN_CHANNEL = int(getenv('BIN_CHANNEL'))
-    PORT = int(getenv('PORT', 8080))
+    BIN_CHANNEL = int(getenv('BIN_CHANNEL' '-1001996145098'))
+    PORT = int(getenv('PORT', ))
     BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "").split())  
+    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "2010387571").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
-    OWNER_USERNAME = str(getenv('OWNER_USERNAME'))
+    OWNER_USERNAME = str(getenv('OWNER_USERNAME' 'mrx235'))
     if 'DYNO' in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv('APP_NAME'))
-    
+        APP_NAME = str(getenv('APP_NAME' 'fil2-b6aa59014f7d'))
+   
     else:
         ON_HEROKU = False
     FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
@@ -35,6 +35,6 @@ class Var(object):
         URL = "https://{}/".format(FQDN)
     else:
         URL = "http://{}/".format(FQDN)
-    DATABASE_URL = str(getenv('DATABASE_URL'))
+    DATABASE_URL = str(getenv('DATABASE_URL' 'mongodb+srv://ZLbot:jodgod@cluster0.ubzxj6v.mongodb.net/?retryWrites=true&w=majority'))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split())) 
