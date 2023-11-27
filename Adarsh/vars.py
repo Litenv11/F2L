@@ -25,7 +25,7 @@ class Var(object):
     OWNER_USERNAME = str(getenv('OWNER_USERNAME' "mrx235"))
     if 'DYNO' in environ:
         ON_HEROKU = True
-        APP_NAME = str(getenv('APP_NAME', "fil2-b6aa59014f7d"))
+        APP_NAME = str(getenv('APP_NAME', "zodf2l-ad57aa05d72d"))
    
     else:
         ON_HEROKU = False
