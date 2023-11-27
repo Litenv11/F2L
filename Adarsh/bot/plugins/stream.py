@@ -6,7 +6,7 @@ from Adarsh.bot import StreamBot
 from Adarsh.utils.database import Database
 from Adarsh.utils.human_readable import humanbytes
 from Adarsh.vars import Var
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, quote
 from pyrogram import filters, Client
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
@@ -106,7 +106,7 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("STREAM 🖥", url=f"https://stream.anshumanpm.eu.org/stream?url={online_link}"), #Stream Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("STREAM 🖥", url=f"https://stream.anshumanpm.eu.org/stream?url={quote(online_link)}"), #Stream Link
                                                 InlineKeyboardButton('DOWNLOAD 📥', url=online_link)]]) #Download Link
         )
     except FloodWait as e:
@@ -145,7 +145,7 @@ async def channel_receive_handler(bot, broadcast):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [InlineKeyboardButton("Download Link", url=online_link)],
-                    [InlineKeyboardButton("Stream Link", url=f"https://stream.anshumanpm.eu.org/stream?url={online_link}")], 
+                    [InlineKeyboardButton("Stream Link", url=f"https://stream.anshumanpm.eu.org/stream?url={quote(online_link)}")], 
                 ]
             )
         )
