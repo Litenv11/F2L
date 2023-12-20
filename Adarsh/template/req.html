@@ -11,21 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css"/>
-    <style>
-    .plyr-share-button{
-        position: absolute;
-        top: 50px;
-        left: 10px;
-        width: 30px;
-        height: 30px;
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 50%;
-        text-align: center;
-        line-height: 30px;
-        color: white;
-        z-index: 10;
-      }
-    </style>
+    
 </head>
 
 <body>
@@ -83,14 +69,6 @@
             body.classList.toggle('dark')
             footer.classList.toggle('dark')
         }
-	</script>
-	<script>
-	var shareButton = document.createElement('div');
-          shareButton.className = 'plyr-share-button';	
-      
-	shareButton.onclick = function() {
-       location.href = "intent:${%s}#Intent;package=com.mxtech.videoplayer.ad;end";
-          };
 	</script>
 </body>
 </html>
